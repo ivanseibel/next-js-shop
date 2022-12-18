@@ -42,6 +42,8 @@ To run this project locally, you need to have Node.js installed on your machine.
 - **Visual Structure**
 - [x] Global styles
 - [x] Header
+- [x] Home basic structure
+- [ ] Products carousel
 
 
 # Technical Stack
