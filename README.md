@@ -35,7 +35,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 
 # Features
 
-
+- Stripe API integration
 
 # Tasks
 
@@ -44,6 +44,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - [x] Header
 - [x] Home basic structure
 - [x] Products carousel
+- [x] Fetch products from API
 
 
 # Technical Stack
@@ -54,6 +55,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - TypeScript - A typed superset of JavaScript that compiles to plain JavaScript
 - EsLint - A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript
 - editorconfig - Helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs
+- Stripe - A suite of payment APIs that powers commerce for online businesses of all sizes, including fraud prevention, and subscription management
 
 # Issues
 
