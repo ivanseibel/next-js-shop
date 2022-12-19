@@ -48,6 +48,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - [x] Use SSG for products
 - [x] Format price
 - [x] Adopt Next.js Link component
+- [x] Create Product page
 
 
 # Technical Stack
