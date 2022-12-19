@@ -45,6 +45,8 @@ To run this project locally, you need to have Node.js installed on your machine.
 - [x] Home basic structure
 - [x] Products carousel
 - [x] Fetch products from API
+- [x] Use SSG for products
+- [x] Format price
 
 
 # Technical Stack
