@@ -35,7 +35,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 
 # Features
 
-
+- Stripe API integration
 
 # Tasks
 
@@ -44,6 +44,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - [x] Header
 - [x] Home basic structure
 - [x] Products carousel
+- [x] Fetch products from API
 
 
 # Technical Stack
