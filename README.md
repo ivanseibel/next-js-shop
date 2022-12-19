@@ -61,3 +61,5 @@ To run this project locally, you need to have Node.js installed on your machine.
 
 
 # To Do
+
+- Add image placeholder for products (see Next.js blur placeholder)
