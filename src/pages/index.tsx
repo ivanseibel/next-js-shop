@@ -7,10 +7,6 @@ import {useKeenSlider} from "keen-slider/react"
 import { HomeContainer, Product } from "../styles/pages/home"
 import 'keen-slider/keen-slider.min.css'
 
-import tShirt1 from "../assets/1.png"
-import tShirt2 from "../assets/2.png"
-import tShirt3 from "../assets/3.png"
-
 interface HomeProps {
   products: {
     id: string
