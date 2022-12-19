@@ -1,9 +1,12 @@
 import { useRouter } from 'next/router'
 import { ImageContainer, ProductContainer, ProductDetailsContainer } from '../../styles/pages/product'
 
-export default function Product() {
-  const router = useRouter()
-  const { id } = router.query
+  const { isFallback } = useRouter();
+
+  // Replace in the future with a loading component (skeleton)
+  if (isFallback) {
+    return <p>Loading...</p>
+  }
 
   return (
     <ProductContainer>
