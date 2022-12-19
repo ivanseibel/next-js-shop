@@ -49,6 +49,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - [x] Format price
 - [x] Adopt Next.js Link component
 - [x] Create Product page
+- [x] Fetch product from API
 
 
 # Technical Stack
@@ -67,3 +68,4 @@ To run this project locally, you need to have Node.js installed on your machine.
 # To Do
 
 - Add image placeholder for products (see Next.js blur placeholder)
+- Add a content loader for product page (skeleton)
