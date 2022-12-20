@@ -38,20 +38,25 @@ To run this project locally, you need to have Node.js installed on your machine.
 - Stripe API integration
 - Show Product details
 - Display products in a carousel
+- Checkout with Stripe
 
 # Tasks
 
 - **Visual Structure**
-- [x] Global styles
-- [x] Header
-- [x] Home basic structure
-- [x] Products carousel
-- [x] Fetch products from API
-- [x] Use SSG for products
-- [x] Format price
-- [x] Adopt Next.js Link component
-- [x] Create Product page
-- [x] Fetch product from API
+  - [x] Global styles
+  - [x] Header
+  - [x] Home basic structure
+  - [x] Products carousel
+- **Stripe API**
+  - [x] Fetch products from API
+  - [x] Use SSG for products
+  - [x] Format price
+- **Product and Checkout**
+  - [x] Adopt Next.js Link component
+  - [x] Create Product page
+  - [x] Fetch product from API
+  - [x] Implement checkout flow
+  - [ ] Implement success page
 
 
 # Technical Stack
@@ -71,3 +76,4 @@ To run this project locally, you need to have Node.js installed on your machine.
 
 - Add image placeholder for products (see Next.js blur placeholder)
 - Add a content loader for product page (skeleton)
+- Track fails with Sentry or similar
