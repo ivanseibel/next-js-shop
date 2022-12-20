@@ -36,6 +36,8 @@ To run this project locally, you need to have Node.js installed on your machine.
 # Features
 
 - Stripe API integration
+- Show Product details
+- Display products in a carousel
 
 # Tasks
 
