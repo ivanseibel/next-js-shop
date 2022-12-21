@@ -57,6 +57,7 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Fetch product from API
   - [x] Implement checkout flow
   - [x] Implement success page
+  - [x] Avoid load success page without session id
 
 
 # Technical Stack
