@@ -3,7 +3,7 @@
 
 - [Table of Contents](#table-of-contents)
 - [About](#about)
-- [Screenshots](#screenshots)
+- [Demo](#demo)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
@@ -15,11 +15,11 @@
 
 # About
 
-ignite-shop is a Next.js web app that implements a simple shop page with the objective of doing some experiments with the new features of Next.js 13.
+ignite-shop is a Next.js web app that implements a simple shop page with the objective of doing some experiments with Stripe and the new features of Next.js 13.
 
-# Screenshots
+# Demo
 
-
+![Demo](/demo/ignite-shop-demo.gif)
 
 # Getting Started
 
