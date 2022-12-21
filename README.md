@@ -56,7 +56,7 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Create Product page
   - [x] Fetch product from API
   - [x] Implement checkout flow
-  - [ ] Implement success page
+  - [x] Implement success page
 
 
 # Technical Stack
