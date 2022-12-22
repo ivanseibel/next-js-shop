@@ -62,8 +62,8 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Avoid load success page without session id
 - **Cart workflow**
   - **Header**
-    - [ ] Add cart icon
-    - [ ] Display number of items in cart
+    - [x] Add cart icon
+    - [x] Display number of items in cart
   - **Home**
     - [ ] Add button to send product to cart
   - **Cart page**
