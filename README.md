@@ -8,7 +8,7 @@
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
 - [Features](#features)
-- [Tasks](#tasks)
+- [Work in progress](#work-in-progress)
 - [Technical Stack](#technical-stack)
 - [Issues](#issues)
 - [To Do](#to-do)
@@ -18,6 +18,8 @@
 ignite-shop is a Next.js web app that implements a simple shop page with the objective of doing some experiments with Stripe and the new features of Next.js 13.
 
 # Demo
+
+The current version demo doesn't include the cart workflow and, the checkout starts from the product page. The checkout from the cart page is in progress.
 
 ![Demo](/demo/ignite-shop-demo.gif)
 
@@ -40,7 +42,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - Display products in a carousel
 - Checkout workflow from cart
 
-# Tasks
+# Work in progress
 
 - **Visual Structure**
   - [x] Global styles
@@ -58,17 +60,14 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Implement checkout flow
   - [x] Implement success page
   - [x] Avoid load success page without session id
-- **Add items to Cart**
-  - [ ] Add item to cart from home
-  - [ ] Add item to cart from product page
-  - [ ] Display number of items in cart in header
-- **Cart page**
-  - [ ] Create cart page
-  - [ ] Display items in cart
-  - [ ] Remove item from cart
-  - [ ] Display total price/quantity
-  - [ ] Checkout button
-
+- **Cart workflow**
+  - **Header**
+    - [ ] Add cart icon
+    - [ ] Display number of items in cart
+  - **Home**
+    - [ ] Add button to send product to cart
+  - **Cart page**
+    - [ ] Create cart page
 
 # Technical Stack
 
