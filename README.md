@@ -62,8 +62,8 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Avoid load success page without session id
 - **Cart workflow**
   - **Header**
-    - [ ] Add cart icon
-    - [ ] Display number of items in cart
+    - [x] Add cart icon
+    - [x] Display number of items in cart
   - **Home**
     - [ ] Add button to send product to cart
   - **Cart page**
@@ -78,6 +78,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - EsLint - A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript
 - editorconfig - Helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs
 - Stripe - A suite of payment APIs that powers commerce for online businesses of all sizes, including fraud prevention, and subscription management
+- Phosphor Icons - A collection of open source icons
 
 # Issues
 
