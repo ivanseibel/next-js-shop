@@ -38,7 +38,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - Stripe API integration
 - Show Product details
 - Display products in a carousel
-- Checkout with Stripe
+- Checkout workflow from cart
 
 # Tasks
 
@@ -58,6 +58,16 @@ To run this project locally, you need to have Node.js installed on your machine.
   - [x] Implement checkout flow
   - [x] Implement success page
   - [x] Avoid load success page without session id
+- **Add items to Cart**
+  - [ ] Add item to cart from home
+  - [ ] Add item to cart from product page
+  - [ ] Display number of items in cart in header
+- **Cart page**
+  - [ ] Create cart page
+  - [ ] Display items in cart
+  - [ ] Remove item from cart
+  - [ ] Display total price/quantity
+  - [ ] Checkout button
 
 
 # Technical Stack
