@@ -40,50 +40,27 @@ export const Product = styled('div', {
     transform: 'translateY(110%)',
     opacity: 0,
     transition: 'all 0.2s ease-in-out',
-  },
 
-  'div': {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    gap: '0.25rem',
-
-    strong: {
-      fontSize: "$lg",
-      color: "$gray100",
-      lineHeight: 1.6,
-    },
+    'div:first-child': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      gap: '0.25rem',
   
-    span: {
-      fontSize: "$xl",
-      fontWeight: 'bold',
-      color: "$green300",
-      lineHeight: 1.4,
+      strong: {
+        fontSize: "$lg",
+        color: "$gray100",
+        lineHeight: 1.6,
+      },
+    
+      span: {
+        fontSize: "$xl",
+        fontWeight: 'bold',
+        color: "$green300",
+        lineHeight: 1.4,
+      },
     },
-  },
-
-  'button': {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-
-    width: 56,
-    height: 56,
-    borderRadius: 6,
-    border: 'none',
-    backgroundColor: '$green500',
-    cursor: 'pointer',
-
-    lineHeight: 0,
-
-    color: '$white',
-
-    transition: 'filter 0.2s',
-
-    '&:hover': {
-      filter: 'brightness(0.9)',
-    }
   },
 
   '&:hover': {
@@ -91,5 +68,25 @@ export const Product = styled('div', {
       transform: 'translateY(0)',
       opacity: 1,
     }
+  }
+})
+
+export const BagContainer = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+
+  width: 56,
+  height: 56,
+  borderRadius: 6,
+  backgroundColor: '$green500',
+  cursor: 'pointer',
+
+  color: '$white',
+
+  transition: 'filter 0.2s',
+
+  '&:hover': {
+    filter: 'brightness(0.9)',
   }
 })

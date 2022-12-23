@@ -5,7 +5,7 @@ import Image from "next/image"
 import { GetStaticProps } from "next"
 import {useKeenSlider} from "keen-slider/react"
 
-import { HomeContainer, Product } from "../styles/pages/home"
+import { BagContainer, HomeContainer, Product } from "../styles/pages/home"
 import 'keen-slider/keen-slider.min.css'
 import Link from "next/link"
 import { Handbag } from "phosphor-react"
@@ -35,7 +35,8 @@ export default function Home({ products }: HomeProps) {
 
       <HomeContainer ref={sliderRef} className="keen-slider">
         {products.map(product => (
-            <Product className="keen-slider__slide" key={product.id}>
+          <Link key={product.id} href={`/product/${product.id}`}>
+            <Product className="keen-slider__slide">
               <Image src={product.imageUrl} width={520} height={480} alt="" />
 
               <footer>
@@ -47,11 +48,12 @@ export default function Home({ products }: HomeProps) {
                     {product.price}
                   </span>
                 </div>
-                <button>
+                <BagContainer>
                   <Handbag size={32} />
-                </button>
+                </BagContainer>
               </footer>
             </Product>
+          </Link>
         ))}
 
       </HomeContainer>

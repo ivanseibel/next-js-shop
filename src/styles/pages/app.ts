@@ -21,7 +21,7 @@ export const Header = styled('header', {
   },
 });
 
-export const BagContainer = styled('button', {
+export const BagContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -29,7 +29,6 @@ export const BagContainer = styled('button', {
   height: 48,
   borderRadius: 6,
   backgroundColor: '$gray800',
-  border: 'none',
   cursor: 'pointer',
   position: 'relative',
 
