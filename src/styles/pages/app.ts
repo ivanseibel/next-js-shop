@@ -29,7 +29,6 @@ export const BagContainer = styled('button', {
   height: 48,
   borderRadius: 6,
   backgroundColor: '$gray800',
-  border: 'none',
   cursor: 'pointer',
   position: 'relative',
 
