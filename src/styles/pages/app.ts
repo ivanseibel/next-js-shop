@@ -22,10 +22,6 @@ export const Header = styled('header', {
 });
 
 export const BagContainer = styled('button', {
-  variants:{
-
-  },
-  
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
