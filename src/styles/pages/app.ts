@@ -21,7 +21,7 @@ export const Header = styled('header', {
   },
 });
 
-export const BagContainer = styled('button', {
+export const BagContainer = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
