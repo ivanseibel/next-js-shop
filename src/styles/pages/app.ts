@@ -21,13 +21,14 @@ export const Header = styled('header', {
   },
 });
 
-export const BagContainer = styled('div', {
+export const BagContainer = styled('button', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   width: 48,
   height: 48,
   borderRadius: 6,
+  border: 'none',
   backgroundColor: '$gray800',
   cursor: 'pointer',
   position: 'relative',
