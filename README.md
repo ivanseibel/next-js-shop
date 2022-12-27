@@ -68,6 +68,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Add button to send product to cart
   - **Cart page**
     - [x] Create cart page
+    - [ ] Finish cart page layout
     - [ ] Use fake data to display cart items
 
 # Technical Stack
