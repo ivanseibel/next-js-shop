@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { BagContainer, CloseButton, Content, Overlay } from './styles'
+import { BagContainer, CloseButton, Content, Description, ImageContainer, Overlay, ProductInfoContainer, ProductListContainer, QuantityContainer, Title, TotalContainer } from './styles'
 import { Handbag, X } from 'phosphor-react'
 
 export function Cart() {
@@ -16,11 +16,55 @@ export function Cart() {
       <Dialog.Portal>
         <Overlay />
         <Content>
-          <Dialog.Title>
+          <Title>
             Your bag
-          </Dialog.Title>
-          <Dialog.Description>
-          </Dialog.Description>
+          </Title>
+          <Description>
+            <ProductListContainer>
+              <div>
+                <ImageContainer>
+                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
+                </ImageContainer>
+                <ProductInfoContainer>
+                  <h3>Product name</h3>
+                  <span>EUR 19.90</span>
+                  <button>Remove</button>
+                </ProductInfoContainer>
+              </div>
+              <div>
+                <ImageContainer>
+                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
+                </ImageContainer>
+                <ProductInfoContainer>
+                  <h3>Product name</h3>
+                  <span>EUR 19.90</span>
+                  <button>Remove</button>
+                </ProductInfoContainer>
+              </div>
+              <div>
+                <ImageContainer>
+                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
+                </ImageContainer>
+                <ProductInfoContainer>
+                  <h3>Product name</h3>
+                  <span>EUR 19.90</span>
+                  <button>Remove</button>
+                </ProductInfoContainer>
+              </div>
+            </ProductListContainer>
+            <footer>
+              <QuantityContainer>
+                <span>Quantity</span>
+                <span>1 item</span>
+              </QuantityContainer>
+              <TotalContainer>
+                <span>Total</span>
+                <span>EUR 19.90</span>
+              </TotalContainer>
+
+              <button>Checkout</button>
+            </footer>
+          </Description>
           <CloseButton>
             <X size={24} />
           </CloseButton>
