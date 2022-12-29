@@ -72,7 +72,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Use fake data to display cart items
   - **Success page**
     - [X] Centralize logo only in success page
-    - [x] Round corners of product image (50%)
+    - [x] Round corners of product image (100%)
     - [ ] Move first message to below the product image
     - [ ] Display all products in success page
     - [ ] Mention number of products in success message
