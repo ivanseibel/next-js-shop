@@ -64,6 +64,7 @@ To run this project locally, you need to have Node.js installed on your machine.
   - **Header**
     - [x] Add cart icon
     - [x] Display number of items in cart
+    - [X] Centralize logo only in success page
   - **Home**
     - [x] Add button to send product to cart
   - **Cart page**
@@ -71,7 +72,6 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Finish cart page layout
     - [x] Use fake data to display cart items
   - **Success page**
-    - [X] Centralize logo only in success page
     - [x] Round corners of product image (100%)
     - [ ] Move first message to below the product image
     - [ ] Display all products in success page
