@@ -11,10 +11,15 @@ interface SuccessProps {
   product: {
     name: string;
     pictureUrl: string;
+    quantity: number;
   };
 }
 
 export default function Success({ customerName, product }: SuccessProps) {
+  const textProductsOnTheWay = product.quantity === 1 
+    ? `${product.name} is on the way!` 
+    : `${product.quantity} t-shirts are on the way!`
+
   return (
     <>
       <Head>
@@ -23,16 +28,17 @@ export default function Success({ customerName, product }: SuccessProps) {
       </Head>
 
       <SuccessContainer>
-        <h1>
-          Your buy was successful!
-        </h1>
 
         <ImageContainer>
           <Image src={product.pictureUrl} width={120} height={110} alt="" />
         </ImageContainer>
 
+        <h1>
+          Your buy was successful!
+        </h1>
+
         <p>
-          Uhuull <strong>{customerName}</strong>, your <strong>{product.name}</strong> is on the way!
+          Uhuull <strong>{customerName}</strong>, your {textProductsOnTheWay}!
         </p>
 
         <Link href={"/"}>
@@ -67,7 +73,8 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       customerName,
       product: {
         name: product.name,
-        pictureUrl: product.images[0]
+        pictureUrl: product.images[0],
+        quantity: session.line_items?.data.length
       }
     }
   }

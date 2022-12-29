@@ -73,9 +73,9 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Use fake data to display cart items
   - **Success page**
     - [x] Round corners of product image (100%)
-    - [ ] Move first message to below the product image
+    - [x] Move first message to below the product image
+    - [x] Mention number of products in success message
     - [ ] Display all products in success page
-    - [ ] Mention number of products in success message
 
 # Technical Stack
 
