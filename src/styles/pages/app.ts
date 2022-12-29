@@ -14,10 +14,33 @@ export const Header = styled('header', {
   maxWidth: '1120px',
   margin: '0 auto',
 
-  '> div': {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  variants: {
+    'centered': {
+      true: {
+        '> div': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+
+          '> button': {
+            display: 'none',
+          },
+        },
+      },
+      false: {
+        '> div': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        },
+      },
+    },
   },
+
+  // '> div': {
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'space-between',
+  // },
 });
 
