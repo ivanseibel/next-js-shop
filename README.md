@@ -64,7 +64,7 @@ To run this project locally, you need to have Node.js installed on your machine.
   - **Header**
     - [x] Add cart icon
     - [x] Display number of items in cart
-    - [X] Centralize logo only in success page
+    - [x] Centralize logo only in success page
   - **Home**
     - [x] Add button to send product to cart
   - **Cart page**
