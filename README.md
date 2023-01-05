@@ -75,7 +75,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Round corners of product image (100%)
     - [x] Move first message to below the product image
     - [x] Mention number of products in success message
-    - [ ] Display all products in success page
+    - [ ] Multi products in success page
 
 # Technical Stack
 
