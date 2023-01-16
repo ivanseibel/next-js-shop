@@ -1,9 +1,44 @@
 import * as Dialog from '@radix-ui/react-dialog'
-import { BagContainer, CloseButton, Content, Description, ImageContainer, Overlay, ProductInfoContainer, ProductListContainer, QuantityContainer, Title, TotalContainer } from './styles'
+import Image from "next/image"
+import { BagContainer, CheckoutButton, CloseButton, Content, Description, ImageContainer, Overlay, ProductInfoContainer, ProductListContainer, QuantityContainer, Title, TotalContainer } from './styles'
 import { Handbag, X } from 'phosphor-react'
+import { useShoppingCart } from 'use-shopping-cart';
+import { useState } from 'react';
+import axios from 'axios';
 
 export function Cart() {
-  const numberOfItems = 1;
+  const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
+  const { cartCount, cartDetails, removeItem, clearCart, redirectToCheckout } = useShoppingCart()
+  console.log(cartDetails)
+
+  const numberOfItems = cartCount || 0;
+
+  async function handleRedirectUserToCheckout() {
+    try {
+      setIsCreatingCheckoutSession(true)
+      const response = await axios.post('/api/checkout', {
+        items: cartDetails,
+      })
+
+      const { checkoutSessionId } = response.data
+      clearCart()
+
+      const checkoutResult = await redirectToCheckout(checkoutSessionId)
+
+      if (checkoutResult.error) {
+        alert(checkoutResult.error.message)
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        // ✅ TypeScript knows err is Error
+        console.log(error.message);
+      } else {
+        console.log('Unexpected error', error);
+      }
+      // TODO: handle error and connect to Sentry or something like that
+      alert('We could not process your buy. Try again later.')
+    }
+  }
 
   return (
     <Dialog.Root>
@@ -17,52 +52,72 @@ export function Cart() {
         <Overlay />
         <Content>
           <Title>
-            Your bag
+            {numberOfItems > 0 
+            ? (
+              <span>
+                Your bag - {cartCount} {cartCount === 1 ? 'item' : 'items'}
+              </span>
+            )
+            : (
+              <span>
+                Your bag is empty
+              </span>
+            )}
           </Title>
           <Description>
             <ProductListContainer>
-              <div>
-                <ImageContainer>
-                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
-                </ImageContainer>
-                <ProductInfoContainer>
-                  <h3>Product name</h3>
-                  <span>EUR 19.90</span>
-                  <button>Remove</button>
-                </ProductInfoContainer>
-              </div>
-              <div>
-                <ImageContainer>
-                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
-                </ImageContainer>
-                <ProductInfoContainer>
-                  <h3>Product name</h3>
-                  <span>EUR 19.90</span>
-                  <button>Remove</button>
-                </ProductInfoContainer>
-              </div>
-              <div>
-                <ImageContainer>
-                  <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dCUyMHNoaXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=480&q=60" alt="Product" />
-                </ImageContainer>
-                <ProductInfoContainer>
-                  <h3>Product name</h3>
-                  <span>EUR 19.90</span>
-                  <button>Remove</button>
-                </ProductInfoContainer>
-              </div>
+              {cartDetails && Object.keys(cartDetails).map((key) => {
+                const price = new Intl.NumberFormat('en-IE', {
+                  style: 'currency',
+                  currency: 'EUR',
+                }).format(cartDetails[key].value * cartDetails[key].quantity)
+                return (
+                  <div key={key}>
+                  <ImageContainer>
+                    <Image src={cartDetails[key].image || ''} width={100} height={100} alt="" />
+                  </ImageContainer>
+                  <ProductInfoContainer>
+                    <h3>{cartDetails[key].name} ({cartDetails[key].quantity})</h3>
+                    <span>
+                      {price}
+                    </span>
+                    <button
+                      onClick={() => removeItem(key)}
+                    >
+                      Remove
+                    </button>
+                  </ProductInfoContainer>
+                </div>
+                )
+              })}
             </ProductListContainer>
             <footer>
               <QuantityContainer>
                 <span>Quantity</span>
-                <span>1 item</span>
+                <span>
+                  {numberOfItems} {numberOfItems === 1 ? 'item' : 'items'}
+                </span>
               </QuantityContainer>
               <TotalContainer>
                 <span>Total</span>
-                <span>EUR 19.90</span>
+                <span>
+                  {
+                    (cartDetails && Object.keys(cartDetails).reduce((acc, key) => {
+                      return acc + (cartDetails[key].value * cartDetails[key].quantity)
+                    }, 0))?.toLocaleString('en-IE', {
+                      style: 'currency',
+                      currency: 'EUR',
+                    })
+                  }
+                </span>
               </TotalContainer>
 
-              <button>Checkout</button>
+              <CheckoutButton 
+                disabled={numberOfItems===0 && !isCreatingCheckoutSession}
+                onClick={handleRedirectUserToCheckout}
+              >
+                Checkout
+              </CheckoutButton>
             </footer>
           </Description>
           <CloseButton>
