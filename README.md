@@ -67,7 +67,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Centralize logo only in success page
   - **Home**
     - [x] Add button to send product to cart
-    - [ ] Add product to cart when clicking on the button
+    - [ ] Add product to cart when clicking on the buy button
   - **Cart page**
     - [x] Create cart page
     - [x] Finish cart page layout
@@ -78,7 +78,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Mention number of products in success message
     - [x] Multi products in success page
   - **Checkout context**
-    - [ ] Create checkout context
+    - [x] Create checkout context
 
 # Technical Stack
 
