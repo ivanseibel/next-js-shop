@@ -90,28 +90,37 @@ export const Description = styled(Dialog.Description, {
     display: 'flex',
     flexDirection: 'column',
     lineHeight: 1.6,
+  }
+})
 
-    '> button' : {
-      marginTop: 57,
-      fontSize: '$md',
-      fontWeight: 'bold',
-      color: '$white',
-      backgroundColor: '$green500',
-      border: 'none',
-      cursor: 'pointer',
-      borderRadius: 8,
-      padding: '20px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+export const CheckoutButton = styled('button', {
+  marginTop: 57,
+  fontSize: '$md',
+  fontWeight: 'bold',
+  color: '$white',
+  backgroundColor: '$green500',
+  border: 'none',
+  cursor: 'pointer',
+  borderRadius: 8,
+  padding: '20px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 
-      transition: 'background-color 0.2s',
+  variants: {
+    disabled: {
+      true: {
+        backgroundColor: '$gray500',
+        cursor: 'not-allowed',
+      },
+      false: {
+        transition: 'background-color 0.2s',
 
-      '&:hover': {
-        backgroundColor: '$green300',
+        '&:hover': {
+          backgroundColor: '$green300',
+        },
       }
-
-    },
+    }
   }
 })
 

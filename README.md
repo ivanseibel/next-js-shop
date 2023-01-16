@@ -67,6 +67,7 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Centralize logo only in success page
   - **Home**
     - [x] Add button to send product to cart
+    - [ ] Add product to cart when clicking on the buy button
   - **Cart page**
     - [x] Create cart page
     - [x] Finish cart page layout
@@ -76,6 +77,8 @@ To run this project locally, you need to have Node.js installed on your machine.
     - [x] Move first message to below the product image
     - [x] Mention number of products in success message
     - [x] Multi products in success page
+  - **Checkout context**
+    - [x] Create checkout context
 
 # Technical Stack
 
@@ -87,6 +90,7 @@ To run this project locally, you need to have Node.js installed on your machine.
 - editorconfig - Helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs
 - Stripe - A suite of payment APIs that powers commerce for online businesses of all sizes, including fraud prevention, and subscription management
 - Phosphor Icons - A collection of open source icons
+- use-shopping-cart - A React hook for managing a shopping cart
 
 # Issues
 
