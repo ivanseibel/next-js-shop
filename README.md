@@ -94,6 +94,9 @@ To run this project locally, you need to have Node.js installed on your machine.
 
 # Issues
 
+- [ ] In the home page, it should add the product just when clicking on the buy button
+- [ ] Checkout throws 500 error when communicating with Stripe API
+- [ ] In the product page, the buy button should add the item to the cart
 
 # To Do
 
