@@ -28,17 +28,6 @@ export function Cart() {
         };
       });
 
-
-      // const cartInfo: CartInfoProps[] = Object.values(cartDetails!).map(product => ({
-      //   id: product.id,
-      //   name: product.name,
-      //   imageUrl: product.imageUrl || '',
-      //   price: product.price,
-      //   quantity: product.quantity,
-      //   defaultPriceId: product.price,
-      //   currency: product.currency
-      // }))
-
       const response = await axios.post('/api/checkout', {
         items: cartInfo
       })
@@ -53,13 +42,12 @@ export function Cart() {
       }
     } catch (error) {
       if (error instanceof Error) {
-        // ✅ TypeScript knows err is Error
         console.log(error);
         console.log(error.message);
       } else {
         console.log('Unexpected error', error);
       }
-      // TODO: handle error and connect to Sentry or something like that
+      // TODO: handle error and connect to Sentry or so
       alert('We could not process your buy. Try again later.')
     }
   }
