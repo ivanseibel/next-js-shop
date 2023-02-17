@@ -32,14 +32,11 @@ export function Cart() {
         items: cartInfo
       })
 
-      const { checkoutSessionId } = response.data
+      const { checkoutUrl } = response.data
+
       clearCart()
 
-      const checkoutResult = await redirectToCheckout(checkoutSessionId)
-
-      if (checkoutResult.error) {
-        alert(checkoutResult.error.message)
-      }
+      window.location.href = checkoutUrl
     } catch (error) {
       if (error instanceof Error) {
         console.log(error);
