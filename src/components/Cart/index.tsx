@@ -9,7 +9,6 @@ import axios from 'axios';
 export function Cart() {
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
   const { cartCount, cartDetails, removeItem, clearCart, redirectToCheckout } = useShoppingCart()
-  console.log("Cart Details", cartDetails)
 
   const numberOfItems = cartCount || 0;
 
@@ -18,8 +17,6 @@ export function Cart() {
       setIsCreatingCheckoutSession(true)
 
       const cartDetailsKeys = Object.keys(Object(cartDetails));
-
-      console.log("Cart Details Keys", cartDetailsKeys)
 
       const cartInfo = cartDetailsKeys.map((item) => {
         return {
