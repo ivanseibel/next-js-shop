@@ -14,13 +14,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(400).json({ message: "Price ID is required" });
   }
   
-  const arrayOfProducts = Object.keys(items).map((key) => items[key])
-  const pricesId = arrayOfProducts.map((item) => item.price_id)
-
-  const lineItems = pricesId.map((priceId) => {
+  const lineItems = items.map((item: { price: string, quantity: number}) => {
     return {
-      price: priceId,
-      quantity: 1,
+      price: item.price,
+      quantity: item.quantity,
     }
   })
 
