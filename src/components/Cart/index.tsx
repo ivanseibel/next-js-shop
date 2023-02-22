@@ -9,15 +9,38 @@ import axios from 'axios';
 export function Cart() {
   const [isCreatingCheckoutSession, setIsCreatingCheckoutSession] = useState(false)
   const { cartCount, cartDetails, removeItem, clearCart, redirectToCheckout } = useShoppingCart()
-  console.log(cartDetails)
+  console.log("Cart Details", cartDetails)
 
   const numberOfItems = cartCount || 0;
 
   async function handleRedirectUserToCheckout() {
     try {
       setIsCreatingCheckoutSession(true)
+
+      const cartDetailsKeys = Object.keys(Object(cartDetails));
+
+      console.log("Cart Details Keys", cartDetailsKeys)
+
+      const cartInfo = cartDetailsKeys.map((item) => {
+        return {
+          price: String(cartDetails?.[item].price_id),
+          quantity: Number(cartDetails?.[item].quantity),
+        };
+      });
+
+
+      // const cartInfo: CartInfoProps[] = Object.values(cartDetails!).map(product => ({
+      //   id: product.id,
+      //   name: product.name,
+      //   imageUrl: product.imageUrl || '',
+      //   price: product.price,
+      //   quantity: product.quantity,
+      //   defaultPriceId: product.price,
+      //   currency: product.currency
+      // }))
+
       const response = await axios.post('/api/checkout', {
-        items: cartDetails,
+        items: cartInfo
       })
 
       const { checkoutSessionId } = response.data
@@ -31,6 +54,7 @@ export function Cart() {
     } catch (error) {
       if (error instanceof Error) {
         // ✅ TypeScript knows err is Error
+        console.log(error);
         console.log(error.message);
       } else {
         console.log('Unexpected error', error);
