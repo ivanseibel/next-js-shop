@@ -8,17 +8,21 @@ import { ImageContainer, ProductsContainer, SuccessContainer } from "../styles/p
 
 interface SuccessProps {
   customerName: string;
-  product: {
+  products: {
     name: string;
     pictureUrl: string;
     quantity: number;
-  };
+  }[];
 }
 
-export default function Success({ customerName, product }: SuccessProps) {
-  const textProductsOnTheWay = product.quantity === 1 
-    ? `${product.name} is on the way!` 
-    : `${product.quantity} t-shirts are on the way!`
+export default function Success({ customerName, products }: SuccessProps) {
+  const totalProducts = products.reduce((acc, product) => {
+    return acc + product.quantity;
+  }, 0);
+
+  const textProductsOnTheWay = totalProducts === 1 
+    ? `${products[0].name} is on the way!` 
+    : `${totalProducts} t-shirts are on the way!`
 
   return (
     <>
@@ -30,15 +34,11 @@ export default function Success({ customerName, product }: SuccessProps) {
       <SuccessContainer>
 
         <ProductsContainer>
-          <ImageContainer>
-            <Image src={product.pictureUrl} width={120} height={110} alt="" />
-          </ImageContainer>
-          <ImageContainer>
-            <Image src={product.pictureUrl} width={120} height={110} alt="" />
-          </ImageContainer>
-          <ImageContainer>
-            <Image src={product.pictureUrl} width={120} height={110} alt="" />
-          </ImageContainer>
+          {products.map(product => (
+            <ImageContainer key={product.name}>
+              <Image src={product.pictureUrl} width={120} height={110} alt="" />
+            </ImageContainer>
+          ))}
         </ProductsContainer>
 
         <h1>
@@ -74,16 +74,19 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   })
 
   const customerName = session.customer_details?.name || "Guest"
-  const product = session.line_items?.data[0].price?.product as Stripe.Product
+  const products = session.line_items?.data.map(item => {
+    const product = item.price?.product as Stripe.Product
+    return {
+      name: product.name,
+      pictureUrl: product.images[0],
+      quantity: item.quantity
+    }
+  })
 
   return {
     props: {
       customerName,
-      product: {
-        name: product.name,
-        pictureUrl: product.images[0],
-        quantity: session.line_items?.data.length
-      }
+      products
     }
   }
 }
